@@ -132,17 +132,45 @@ export const weddingPhotos: WeddingPhoto[] = [
   ),
 ];
 
-/** First review strip (left → right): pillars, then river bride. */
+/**
+ * Bride quote sections use dedicated files — not the numbered collage slots (those get reshuffled by ingest/sync).
+ * Replace review-*.jpg on disk to change these without touching the 01–18 grid.
+ */
 export const reviewStripTop: [WeddingPhoto, WeddingPhoto] = [
-  weddingPhotos[14]!,
-  weddingPhotos[13]!,
+  photo(
+    "review-top-pillars.jpg",
+    682,
+    1024,
+    "Two lush floral pillars framing a ceremony space, coral and yellow blooms with blue accents, mountains beyond a fence",
+  ),
+  photo(
+    "review-top-river.jpg",
+    679,
+    1024,
+    "Bride with a vibrant yellow, orange, and white bouquet with silk ribbons, river and evergreens behind",
+  ),
 ];
 
-/** Second review strip (left → right): lodge wide, golden hour couple, overhead table. */
+/** Second strip: wide lodge line-up, golden-hour couple portrait, overhead sweetheart table. */
 export const reviewStripBottom: [WeddingPhoto, WeddingPhoto, WeddingPhoto] = [
-  weddingPhotos[15]!,
-  weddingPhotos[16]!,
-  weddingPhotos[17]!,
+  photo(
+    "review-bottom-lodge.jpg",
+    1024,
+    762,
+    "Bride and four bridesmaids with peach, cream, and white bouquets in front of a wooden mountain lodge",
+  ),
+  photo(
+    "review-bottom-couple.jpg",
+    1024,
+    682,
+    "Bride and groom at golden hour; bride smiles at camera with a lush peach and cream garden bouquet",
+  ),
+  photo(
+    "review-bottom-overhead.jpg",
+    1024,
+    592,
+    "Overhead view of couple at sweetheart table with ground floral installation of pink, peach, and lavender blooms on the lawn",
+  ),
 ];
 
 /** Home page — “What we do” section image. */

@@ -6,7 +6,7 @@ Default assets path is the Cursor project assets dir for this workspace; overrid
   CURSOR_ASSETS=/path/to/assets python3 scripts/sync-wedding-from-cursor-assets.py
 
 Rules:
-- Skips Screenshot*, Bison_Floral* (logos), FC865F* (tiny misc).
+- Skips Screenshot*, Bison_Floral* (logos), FC865F* (tiny misc), EKP-* (HoneyBook/design exports — often UI screenshots).
 - Dedupes by MD5.
 - Puts 4Z2A9735* (field bride) in slot 01 if present; fills 02–18 from remaining, A→Z by filename.
 - Requires macOS `sips` for PNG→JPEG (same as wedding:ingest).
@@ -70,7 +70,12 @@ def main() -> None:
         if not p.is_file():
             continue
         n = p.name
-        if n.startswith("Screenshot") or n.startswith("Bison_Floral") or n.startswith("FC865F"):
+        if (
+            n.startswith("Screenshot")
+            or n.startswith("Bison_Floral")
+            or n.startswith("FC865F")
+            or n.startswith("EKP")
+        ):
             continue
         if p.suffix.lower() not in (".png", ".jpg", ".jpeg"):
             continue
