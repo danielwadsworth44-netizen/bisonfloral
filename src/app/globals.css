@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  /* Main page canvas — light pink */
+  --background: #f3d8e4;
+  --foreground: #241915;
+  /* Cards, panels, footer band — warm cream */
+  --surface: #f6efdb;
+  --surface-elevated: #fffaf3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Notched phones: keep content off curved edges without fighting page padding */
+.site-body {
+  padding-left: max(0px, env(safe-area-inset-left, 0px));
+  padding-right: max(0px, env(safe-area-inset-right, 0px));
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: #eab0bb;
+  color: #241915;
+}
