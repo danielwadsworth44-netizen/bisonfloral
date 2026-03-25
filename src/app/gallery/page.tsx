@@ -2,110 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import type { WeddingPhoto } from "@/content/wedding-photos";
+import { reviewStripBottom, reviewStripTop, weddingPhotos } from "@/content/wedding-photos";
 
 export const metadata: Metadata = {
   title: "Gallery",
 };
-
-type WeddingPhoto = {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-};
-
-const weddingPhotos: WeddingPhoto[] = [
-  {
-    src: "/images/weddings/01-bride-field-ground-florals.png",
-    width: 682,
-    height: 1024,
-    alt: "Bride in a field with five large ground floral installations and matching bouquet, mountains behind",
-  },
-  {
-    src: "/images/weddings/02-rectangular-ceremony-arch.png",
-    width: 682,
-    height: 1024,
-    alt: "Full rectangular wedding arch covered in dahlias, roses, and hydrangeas on a lawn with valley view",
-  },
-  {
-    src: "/images/weddings/03-couple-veil-wildflower-field.png",
-    width: 682,
-    height: 1024,
-    alt: "Bride and groom under a long veil in a wildflower field; bride holds a soft pastel bouquet",
-  },
-  {
-    src: "/images/weddings/04-bridal-bouquet-golden-hour.png",
-    width: 683,
-    height: 1024,
-    alt: "Bride and groom at golden hour; lush peach, orange, and cream garden bouquet in foreground",
-  },
-  {
-    src: "/images/weddings/05-bride-bridesmaids-bouquets.png",
-    width: 1024,
-    height: 683,
-    alt: "Bride with four bridesmaids holding coordinated peach, cream, and white organic bouquets by a lodge",
-  },
-  {
-    src: "/images/weddings/06-western-mountain-bouquet.png",
-    width: 686,
-    height: 1024,
-    alt: "Western-style couple in mountain meadow; bride holds cream, mauve, and burgundy bouquet with long ribbon",
-  },
-  {
-    src: "/images/weddings/07-bride-burgundy-bouquet.png",
-    width: 678,
-    height: 1024,
-    alt: "Bride seated outdoors in lace gown and veil holding a burgundy, pink, and white bouquet",
-  },
-  {
-    src: "/images/weddings/08-ceremony-ground-installations.png",
-    width: 679,
-    height: 1024,
-    alt: "Outdoor ceremony with ground-level floral clusters, hydrangeas and dahlias, misty mountain backdrop",
-  },
-  {
-    src: "/images/weddings/09-bouquet-and-boutonniere.png",
-    width: 1024,
-    height: 679,
-    alt: "Close-up of bridal bouquet with pink dahlias and peach blooms beside groom boutonniere",
-  },
-  {
-    src: "/images/weddings/10-reception-table-centerpiece.png",
-    width: 679,
-    height: 1024,
-    alt: "Wedding table with blue and white chinoiserie plates and centerpiece of white roses and blue hydrangeas",
-  },
-  {
-    src: "/images/weddings/11-garden-bouquet-couple.png",
-    width: 686,
-    height: 1024,
-    alt: "Couple holding a vibrant peach, coral, and yellow garden bouquet; groom in sage green suit",
-  },
-  {
-    src: "/images/weddings/12-couple-floral-dog-collars.png",
-    width: 1024,
-    height: 682,
-    alt: "Bride and groom with two golden retrievers wearing floral wreath collars; blush and white bouquet",
-  },
-  {
-    src: "/images/weddings/13-wedding-party-mountain-field.png",
-    width: 1024,
-    height: 683,
-    alt: "Full wedding party in a field with peach and yellow bouquets, dusty blue dresses, mountain trees behind",
-  },
-  {
-    src: "/images/weddings/14-bride-river-yellow-bouquet.png",
-    width: 682,
-    height: 1024,
-    alt: "Bride with a vibrant yellow, orange, and white bouquet with silk ribbons, river and evergreens behind",
-  },
-  {
-    src: "/images/weddings/15-broken-arch-floral-pillars.png",
-    width: 682,
-    height: 1024,
-    alt: "Two lush floral pillars framing a ceremony space, coral and yellow blooms with blue accents, mountains beyond a fence",
-  },
-];
 
 /** Focal variety only — always object-cover so cells fill with no letterboxing. */
 const photoTreatments: Array<"cover-center" | "cover-top" | "cover-bottom"> = [
@@ -257,12 +159,12 @@ export default function GalleryPage() {
           <div className="mx-auto mt-6 flex w-full max-w-5xl flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-12">
             <StoryPhotoStrip className="w-full shrink-0 lg:w-auto">
               <StoryThumbPortraitFeatured
-                src="/images/weddings/15-broken-arch-floral-pillars.png"
-                alt="Two lush floral pillars framing a ceremony space, coral and yellow blooms with blue accents, mountains beyond a fence"
+                src={reviewStripTop[0].src}
+                alt={reviewStripTop[0].alt}
               />
               <StoryThumbPortraitFeatured
-                src="/images/weddings/14-bride-river-yellow-bouquet.png"
-                alt="Bride with a vibrant yellow, orange, and white bouquet with silk ribbons, river and evergreens behind"
+                src={reviewStripTop[1].src}
+                alt={reviewStripTop[1].alt}
               />
             </StoryPhotoStrip>
 
@@ -301,16 +203,16 @@ export default function GalleryPage() {
 
               <StoryPhotoStrip className="order-1 w-full shrink-0 lg:order-2 lg:w-auto">
                 <StoryThumbLandscape
-                  src="/images/weddings/16-bride-bridesmaids-lodge.png"
-                  alt="Bride and four bridesmaids with peach, cream, and white bouquets in front of a wooden mountain lodge"
+                  src={reviewStripBottom[0].src}
+                  alt={reviewStripBottom[0].alt}
                 />
                 <StoryThumbPortrait
-                  src="/images/weddings/17-couple-golden-hour-bouquet.png"
-                  alt="Bride and groom at golden hour; bride smiles at camera with a lush peach and cream garden bouquet"
+                  src={reviewStripBottom[1].src}
+                  alt={reviewStripBottom[1].alt}
                 />
                 <StoryThumbPortrait
-                  src="/images/weddings/18-sweetheart-table-ground-florals.png"
-                  alt="Overhead view of couple at sweetheart table with ground floral installation of pink, peach, and lavender blooms on the lawn"
+                  src={reviewStripBottom[2].src}
+                  alt={reviewStripBottom[2].alt}
                 />
               </StoryPhotoStrip>
             </div>

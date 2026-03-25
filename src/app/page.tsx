@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { instagramUrl } from "@/components/site-data";
+import { homeWeddingPhoto } from "@/content/wedding-photos";
 
 export default function Home() {
   return (
@@ -57,10 +58,10 @@ export default function Home() {
           <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-6 px-4 py-9 sm:px-5 md:px-8 md:py-10 lg:grid-cols-2 lg:items-center lg:gap-10">
             <div className="order-1 w-full max-w-lg justify-self-center overflow-hidden rounded-2xl border border-[#972d3e]/12 bg-surface-elevated/65 shadow-[0_8px_32px_rgba(151,45,62,0.06)] lg:order-1 lg:max-w-[28.5rem] lg:justify-self-start xl:max-w-[31.5rem]">
               <Image
-                src="/images/weddings/01-bride-field-ground-florals.png"
-                alt="Bride in a field with large ground floral installations and bouquet, mountains behind"
-                width={682}
-                height={1024}
+                src={homeWeddingPhoto.src}
+                alt={homeWeddingPhoto.alt}
+                width={homeWeddingPhoto.width}
+                height={homeWeddingPhoto.height}
                 sizes="(max-width: 1024px) 100vw, 480px"
                 className="aspect-[4/3] w-full object-cover sm:min-h-[200px] lg:aspect-[4/3] lg:min-h-0"
               />
