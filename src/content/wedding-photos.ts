@@ -6,6 +6,8 @@
  * — I never see your Lightroom/export filenames unless they’re in the repo.
  * — So the workflow for any site is: drop files into the folder, then set `file` below to match
  *   each filename exactly (any names you want). Order in this array controls collage + strips.
+ * — If a slot still used a wrong extension (e.g. code said .jpg but only .png existed), Next/Image 404s
+ *   and cells look empty. Replace any file with your final export while keeping the same filename.
  *
  * Collage uses the first 15 entries. Entries 16–18 are only used in the second review strip.
  * Home page “What we do” image = first entry.
