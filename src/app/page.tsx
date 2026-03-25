@@ -57,6 +57,7 @@ export default function Home() {
         <section className="border-t border-[#972d3e]/10 bg-background">
           <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-6 px-4 py-9 sm:px-5 md:px-8 md:py-10 lg:grid-cols-2 lg:items-center lg:gap-10">
             <div className="order-1 w-full max-w-lg justify-self-center overflow-hidden rounded-2xl border border-[#972d3e]/12 bg-surface-elevated/65 shadow-[0_8px_32px_rgba(151,45,62,0.06)] lg:order-1 lg:max-w-[28.5rem] lg:justify-self-start xl:max-w-[31.5rem]">
+              {/* Same image as gallery slot 01 (see gallery-manifest.json) */}
               <Image
                 src={homeWeddingPhoto.src}
                 alt={homeWeddingPhoto.alt}

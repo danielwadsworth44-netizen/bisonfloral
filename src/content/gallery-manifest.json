@@ -1,0 +1,29 @@
+{
+  "__readme": "Cursor saves uploads as NAME-uuid.png. Each match = unique filename prefix. Order = slots 01–18. Slot 01 = home “What we do” image. Run: npm run gallery:import",
+  "slots": [
+    { "out": "01-bride-field-ground-florals.jpg", "match": "01-bride-field-ground-florals-" },
+    { "out": "02-rectangular-ceremony-arch.jpg", "match": "02-rectangular-ceremony-arch-" },
+    { "out": "03-couple-veil-wildflower-field.jpg", "match": "03-couple-veil-wildflower-field-" },
+    { "out": "04-bridal-bouquet-golden-hour.jpg", "match": "04-bridal-bouquet-golden-hour-" },
+    { "out": "05-bride-bridesmaids-bouquets.jpg", "match": "IMG_1242-6159443d-" },
+    { "out": "06-western-mountain-bouquet.jpg", "match": "06-western-mountain-bouquet-" },
+    { "out": "07-bride-burgundy-bouquet.jpg", "match": "W_S669-146c25c2-" },
+    { "out": "08-ceremony-ground-installations.jpg", "match": "W_S270-2-9181c134-" },
+    { "out": "09-bouquet-and-boutonniere.jpg", "match": "IMG_2057-11cfd6d2-" },
+    { "out": "10-reception-table-centerpiece.jpg", "match": "IMG_0966-29d5e07f-" },
+    { "out": "11-garden-bouquet-couple.jpg", "match": "IMG_0963-eab0928c-" },
+    { "out": "12-couple-floral-dog-collars.jpg", "match": "IMG_0955-c81bfce0-" },
+    { "out": "13-wedding-party-mountain-field.jpg", "match": "IMG_0906-70176ecd-" },
+    { "out": "14-bride-river-yellow-bouquet.jpg", "match": "IMG_0500-5e7d2985-" },
+    { "out": "15-broken-arch-floral-pillars.jpg", "match": "DSC01638-d508ba99-" },
+    { "out": "16-bride-bridesmaids-lodge.jpg", "match": "5E4A0045-b775a0a7-" },
+    { "out": "17-couple-golden-hour-bouquet.jpg", "match": "5E4A0045-e2a5333e-" },
+    { "out": "18-sweetheart-table-ground-florals.jpg", "match": "IMG_2109-8a21d613-" }
+  ],
+  "reviewSlots": {
+    "__readme": "Set enabled true and add {out, match} rows; name uploads review-top-pillars-UUID.png etc. Then point reviewStripTop/Bottom in wedding-photos.ts at those files.",
+    "enabled": false,
+    "top": [],
+    "bottom": []
+  }
+}

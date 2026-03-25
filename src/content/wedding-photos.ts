@@ -1,10 +1,15 @@
 /**
- * Wedding images: public/images/weddings/
+ * Wedding / gallery images: `public/images/weddings/`
  *
- * Filenames are fixed (01…18) so the grid + review strips stay wired. You do NOT need to
- * rename exports by hand: drop JPG/PNG into public/images/weddings/_incoming/ and run:
- *   npm run wedding:ingest
- * See _incoming/README.txt for slot order. Then tweak `alt` strings below if a slot’s scene changed.
+ * **Populate from Cursor uploads (named files):**
+ * 1. Save each image with a unique prefix that matches `gallery-manifest.json` (e.g. `05-bride-bridesmaids-NEWUUID.png`).
+ * 2. Run `npm run gallery:import` (uses `src/content/gallery-manifest.json` + Cursor assets folder).
+ *
+ * Slot **01** is also the home page “What we do” image (`homeWeddingPhoto`).
+ *
+ * **Bride quote strips:** Until `reviewSlots.enabled` in the manifest + matching `review-*.jpg` exist,
+ * strips reuse collage slots **15+14** (top) and **16–18** (bottom). When you add review-only shots,
+ * enable `reviewSlots` in the manifest, run import, then switch this file to `photo("review-top-…")` entries.
  */
 
 const dir = "/images/weddings";
@@ -20,7 +25,7 @@ function photo(file: string, width: number, height: number, alt: string): Weddin
   return { src: `${dir}/${file}`, width, height, alt };
 }
 
-/** 18 slots: [0..14] = “More florals” grid, [15..17] = second review row only. */
+/** 18 slots: [0..14] = “More florals” grid; [15..17] also used for bottom review strip until review JPEGs exist. */
 export const weddingPhotos: WeddingPhoto[] = [
   photo(
     "01-bride-field-ground-florals.jpg",
@@ -132,46 +137,15 @@ export const weddingPhotos: WeddingPhoto[] = [
   ),
 ];
 
-/**
- * Bride quote sections use dedicated files — not the numbered collage slots (those get reshuffled by ingest/sync).
- * Replace review-*.jpg on disk to change these without touching the 01–18 grid.
- */
-export const reviewStripTop: [WeddingPhoto, WeddingPhoto] = [
-  photo(
-    "review-top-pillars.jpg",
-    682,
-    1024,
-    "Two lush floral pillars framing a ceremony space, coral and yellow blooms with blue accents, mountains beyond a fence",
-  ),
-  photo(
-    "review-top-river.jpg",
-    679,
-    1024,
-    "Bride with a vibrant yellow, orange, and white bouquet with silk ribbons, river and evergreens behind",
-  ),
-];
+/** Top strip: slots 15 then 14 (pillars + river). Swap manifest rows if you need a different pair. */
+export const reviewStripTop: [WeddingPhoto, WeddingPhoto] = [weddingPhotos[14]!, weddingPhotos[13]!];
 
-/** Second strip: wide lodge line-up, golden-hour couple portrait, overhead sweetheart table. */
+/** Bottom strip: slots 16–18. Replace with `review-bottom-*.jpg` when manifest.reviewSlots is enabled. */
 export const reviewStripBottom: [WeddingPhoto, WeddingPhoto, WeddingPhoto] = [
-  photo(
-    "review-bottom-lodge.jpg",
-    1024,
-    762,
-    "Bride and four bridesmaids with peach, cream, and white bouquets in front of a wooden mountain lodge",
-  ),
-  photo(
-    "review-bottom-couple.jpg",
-    1024,
-    682,
-    "Bride and groom at golden hour; bride smiles at camera with a lush peach and cream garden bouquet",
-  ),
-  photo(
-    "review-bottom-overhead.jpg",
-    1024,
-    592,
-    "Overhead view of couple at sweetheart table with ground floral installation of pink, peach, and lavender blooms on the lawn",
-  ),
+  weddingPhotos[15]!,
+  weddingPhotos[16]!,
+  weddingPhotos[17]!,
 ];
 
-/** Home page — “What we do” section image. */
+/** Home — second image on landing (after hero): same as gallery slot 01. */
 export const homeWeddingPhoto = weddingPhotos[0]!;
