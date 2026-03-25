@@ -8,6 +8,7 @@ import {
   reviewFirstQuoteStripPhotos,
   reviewSecondQuotePhotos,
 } from "@/content/wedding-photos";
+import { floatStyle } from "@/lib/float-style";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -27,9 +28,11 @@ const gridSizes =
 function CollagePhotoCell({
   photo,
   treatment,
+  floatStep = 0,
 }: {
   photo: WeddingPhoto;
   treatment: CollageTreatment;
+  floatStep?: number;
 }) {
   const objectClass =
     treatment === "cover-center"
@@ -38,8 +41,13 @@ function CollagePhotoCell({
         ? "object-cover object-top"
         : "object-cover object-bottom";
 
+  const { className: floatClass, style: floatAnim } = floatStyle(floatStep);
+
   return (
-    <div className="relative aspect-[4/5] w-full min-w-0 overflow-hidden rounded-lg border border-[#972d3e]/10 bg-[#2a1815] shadow-sm">
+    <div
+      className={`relative aspect-[4/5] w-full min-w-0 overflow-hidden rounded-lg border border-[#972d3e]/10 bg-[#2a1815] shadow-sm ${floatClass}`}
+      style={floatAnim}
+    >
       <Image src={photo.src} alt={photo.alt} fill sizes={gridSizes} className={objectClass} />
     </div>
   );
@@ -61,36 +69,77 @@ function StoryPhotoStrip({
   );
 }
 
-function StoryThumbPortraitFeatured({ src, alt }: { src: string; alt: string }) {
+function StoryThumbPortraitFeatured({
+  src,
+  alt,
+  floatStep,
+}: {
+  src: string;
+  alt: string;
+  floatStep?: number;
+}) {
+  const anim = floatStep !== undefined ? floatStyle(floatStep) : null;
   return (
-    <div className="relative h-[15.25rem] w-[9.5rem] shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-[17.25rem] sm:w-[10.35rem] md:h-[19.5rem] md:w-48">
+    <div
+      className={`relative h-[15.25rem] w-[9.5rem] shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-[17.25rem] sm:w-[10.35rem] md:h-[19.5rem] md:w-48 ${anim?.className ?? ""}`}
+      style={anim?.style}
+    >
       <Image src={src} alt={alt} fill sizes="(max-width: 768px) 42vw, 200px" className="object-cover" />
     </div>
   );
 }
 
-function StoryThumbPortrait({ src, alt }: { src: string; alt: string }) {
+function StoryThumbPortrait({
+  src,
+  alt,
+  floatStep,
+}: {
+  src: string;
+  alt: string;
+  floatStep?: number;
+}) {
+  const anim = floatStep !== undefined ? floatStyle(floatStep) : null;
   return (
-    <div className="relative h-[11.75rem] w-[7.65rem] shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-56 sm:w-[9.25rem] md:h-[15.75rem] md:w-40">
+    <div
+      className={`relative h-[11.75rem] w-[7.65rem] shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-56 sm:w-[9.25rem] md:h-[15.75rem] md:w-40 ${anim?.className ?? ""}`}
+      style={anim?.style}
+    >
       <Image src={src} alt={alt} fill sizes="(max-width: 640px) 32vw, 160px" className="object-cover" />
     </div>
   );
 }
 
-function StoryThumbLandscape({ src, alt }: { src: string; alt: string }) {
+function StoryThumbLandscape({
+  src,
+  alt,
+  floatStep,
+}: {
+  src: string;
+  alt: string;
+  floatStep?: number;
+}) {
+  const anim = floatStep !== undefined ? floatStyle(floatStep) : null;
   return (
-    <div className="relative h-[11.75rem] w-[16.25rem] shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-56 sm:w-[19.5rem] md:h-[15.75rem] md:w-[22.5rem]">
+    <div
+      className={`relative h-[11.75rem] w-[16.25rem] shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-56 sm:w-[19.5rem] md:h-[15.75rem] md:w-[22.5rem] ${anim?.className ?? ""}`}
+      style={anim?.style}
+    >
       <Image src={src} alt={alt} fill sizes="(max-width: 640px) 68vw, 340px" className="object-cover" />
     </div>
   );
 }
 
 export default function GalleryPage() {
+  const introAnim = floatStyle(0);
+  const firstQuoteAnim = floatStyle(2);
+  const secondQuoteAnim = floatStyle(0);
+  const moreFloralsHeadingAnim = floatStyle(0);
+
   return (
     <div className="min-h-screen min-w-0 bg-background text-[#241915]">
       <SiteHeader />
       <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8 sm:px-5 md:px-8 md:py-10">
-        <div className="max-w-xl">
+        <div className={`max-w-xl ${introAnim.className}`} style={introAnim.style}>
           <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Gallery</p>
           <h1 className="mt-2 font-[family:var(--font-display)] text-3xl leading-[0.95] md:text-4xl">
             Work from real days
@@ -110,12 +159,15 @@ export default function GalleryPage() {
 
           <div className="mx-auto mt-6 flex w-full max-w-5xl flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-12">
             <StoryPhotoStrip className="w-full shrink-0 lg:w-auto">
-              {reviewFirstQuoteStripPhotos.map((p) => (
-                <StoryThumbPortraitFeatured key={p.src} src={p.src} alt={p.alt} />
+              {reviewFirstQuoteStripPhotos.map((p, i) => (
+                <StoryThumbPortraitFeatured key={p.src} src={p.src} alt={p.alt} floatStep={i} />
               ))}
             </StoryPhotoStrip>
 
-            <div className="flex w-full min-w-0 max-w-xl flex-col items-center justify-center text-center">
+            <div
+              className={`flex w-full min-w-0 max-w-xl flex-col items-center justify-center text-center ${firstQuoteAnim.className}`}
+              style={firstQuoteAnim.style}
+            >
               <blockquote className="font-[family:var(--font-display)] text-lg leading-snug text-[#241915] sm:text-xl sm:leading-snug md:text-2xl md:leading-snug">
                 <p className="mx-auto max-w-[19rem] text-balance sm:max-w-[22rem] md:max-w-[26rem]">
                   &ldquo;I could not get over the florals—they were stunning. It was everything I
@@ -133,7 +185,10 @@ export default function GalleryPage() {
 
           <div className="mt-10 border-t border-[#972d3e]/10 pt-10">
             <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-12">
-              <div className="order-2 flex w-full min-w-0 max-w-xl flex-col items-center justify-center text-center lg:order-1">
+              <div
+                className={`order-2 flex w-full min-w-0 max-w-xl flex-col items-center justify-center text-center lg:order-1 ${secondQuoteAnim.className}`}
+                style={secondQuoteAnim.style}
+              >
                 <blockquote className="font-[family:var(--font-display)] text-xl leading-snug text-[#241915] md:text-2xl md:leading-snug">
                   <p className="text-balance">&ldquo;The best day.&rdquo;</p>
                 </blockquote>
@@ -152,15 +207,20 @@ export default function GalleryPage() {
                 <StoryThumbLandscape
                   src={reviewSecondQuotePhotos[0]!.src}
                   alt={reviewSecondQuotePhotos[0]!.alt}
+                  floatStep={1}
                 />
                 <StoryThumbPortrait
                   src={reviewSecondQuotePhotos[1]!.src}
                   alt={reviewSecondQuotePhotos[1]!.alt}
+                  floatStep={2}
                 />
-                <StoryThumbPortrait
-                  src={reviewSecondQuotePhotos[2]!.src}
-                  alt={reviewSecondQuotePhotos[2]!.alt}
-                />
+                <div className="hidden min-w-0 md:contents">
+                  <StoryThumbPortrait
+                    src={reviewSecondQuotePhotos[2]!.src}
+                    alt={reviewSecondQuotePhotos[2]!.alt}
+                    floatStep={3}
+                  />
+                </div>
               </StoryPhotoStrip>
             </div>
           </div>
@@ -172,14 +232,21 @@ export default function GalleryPage() {
         >
           <p
             id="gallery-general-heading"
-            className="mx-auto max-w-5xl text-xs uppercase tracking-[0.28em] text-[#972d3e]"
+            className={`mx-auto max-w-5xl text-xs uppercase tracking-[0.28em] text-[#972d3e] ${moreFloralsHeadingAnim.className}`}
+            style={moreFloralsHeadingAnim.style}
           >
             More florals
           </p>
           <div className="mx-auto mt-5 grid max-w-5xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-2.5 md:grid-cols-4 md:gap-2.5 lg:grid-cols-5 lg:gap-2.5">
-            {moreFloralsPhotos.map((photo, i) => (
-              <CollagePhotoCell key={photo.src} photo={photo} treatment={collageTreatment(i)} />
-            ))}
+            {moreFloralsPhotos.map((photo, i) =>
+              i >= 12 ? (
+                <div key={photo.src} className="hidden min-w-0 sm:contents">
+                  <CollagePhotoCell photo={photo} treatment={collageTreatment(i)} floatStep={i} />
+                </div>
+              ) : (
+                <CollagePhotoCell key={photo.src} photo={photo} treatment={collageTreatment(i)} floatStep={i} />
+              ),
+            )}
           </div>
         </section>
       </main>

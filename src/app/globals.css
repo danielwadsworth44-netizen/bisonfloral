@@ -53,3 +53,28 @@ img {
   background: #eab0bb;
   color: #241915;
 }
+
+/* Gentle entrance: fade + lift. Stagger with inline --float-i (integer step). */
+@keyframes float-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-in {
+  animation: float-in-up 0.78s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--float-i, 0) * 52ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
