@@ -5,17 +5,17 @@ import { siteNav } from "@/components/site-data";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-[#972d3e]/10 bg-background/90 pt-[env(safe-area-inset-top,0px)] backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-3 px-4 py-3 sm:px-5 md:flex-row md:items-center md:justify-between md:px-8">
-        <div className="flex w-full justify-center md:w-auto md:justify-start">
+      <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col items-center gap-3 px-4 py-3 sm:px-5 md:flex-row md:items-center md:justify-between md:px-8">
+        <div className="flex w-full justify-center md:w-auto md:shrink-0 md:justify-start">
           <Link href="/" className="inline-flex max-w-full shrink-0 items-center">
-          <Image
-            src="/brand/logo-primary.svg"
-            alt="Bison Floral"
-            width={330}
-            height={145}
-            priority
-            className="h-auto w-[min(100%,200px)] sm:w-[220px] md:w-[260px]"
-          />
+            <Image
+              src="/brand/logo-primary.svg"
+              alt="Bison Floral"
+              width={330}
+              height={145}
+              priority
+              className="h-auto w-[min(100%,200px)] sm:w-[220px] md:w-[260px]"
+            />
           </Link>
         </div>
 
