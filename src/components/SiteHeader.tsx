@@ -18,14 +18,14 @@ export function SiteHeader() {
         </Link>
 
         <nav
-          className="flex flex-wrap items-center justify-center gap-2 text-sm uppercase tracking-[0.22em] text-[#6f3944] md:justify-end"
+          className="mx-auto grid w-full max-w-sm grid-cols-2 gap-2 text-sm uppercase tracking-[0.22em] text-[#6f3944] md:mx-0 md:flex md:max-w-none md:w-auto md:flex-wrap md:items-center md:justify-end"
           aria-label="Primary"
         >
           {siteNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex min-h-11 min-w-[2.75rem] items-center justify-center rounded-full border border-[#972d3e]/12 bg-surface-elevated/80 px-4 py-2 transition active:scale-[0.98] hover:border-[#d96889] hover:text-[#972d3e]"
+              className="inline-flex min-h-11 w-full min-w-0 items-center justify-center rounded-full border border-[#972d3e]/12 bg-surface-elevated/80 px-4 py-2 text-center transition active:scale-[0.98] hover:border-[#d96889] hover:text-[#972d3e] md:w-auto md:min-w-[2.75rem]"
             >
               {item.label}
             </Link>
