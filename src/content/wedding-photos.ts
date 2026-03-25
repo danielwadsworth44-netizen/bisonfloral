@@ -164,6 +164,15 @@ export const reviewFirstQuotePhotos: WeddingPhoto[] = [
   ),
 ];
 
+/** First quote row on the gallery: first and fourth client shots only (both portrait). */
+export const reviewFirstQuoteStripPhotos: WeddingPhoto[] = [
+  reviewFirstQuotePhotos[0]!,
+  reviewFirstQuotePhotos[3]!,
+];
+
+/** “More florals” grid — drops the last three collage slots. */
+export const moreFloralsPhotos: WeddingPhoto[] = weddingPhotos.slice(0, 15);
+
 /**
  * Second bride-quote strip (three images, no overlap with `weddingPhotos`).
  * Order matches the gallery row: landscape, portrait, portrait.

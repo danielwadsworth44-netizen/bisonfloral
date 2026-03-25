@@ -3,7 +3,11 @@ import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import type { WeddingPhoto } from "@/content/wedding-photos";
-import { reviewFirstQuotePhotos, reviewSecondQuotePhotos, weddingPhotos } from "@/content/wedding-photos";
+import {
+  moreFloralsPhotos,
+  reviewFirstQuoteStripPhotos,
+  reviewSecondQuotePhotos,
+} from "@/content/wedding-photos";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -106,22 +110,9 @@ export default function GalleryPage() {
 
           <div className="mx-auto mt-6 flex w-full max-w-5xl flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-12">
             <StoryPhotoStrip className="w-full shrink-0 lg:w-auto">
-              <StoryThumbPortraitFeatured
-                src={reviewFirstQuotePhotos[0]!.src}
-                alt={reviewFirstQuotePhotos[0]!.alt}
-              />
-              <StoryThumbLandscape
-                src={reviewFirstQuotePhotos[1]!.src}
-                alt={reviewFirstQuotePhotos[1]!.alt}
-              />
-              <StoryThumbLandscape
-                src={reviewFirstQuotePhotos[2]!.src}
-                alt={reviewFirstQuotePhotos[2]!.alt}
-              />
-              <StoryThumbPortrait
-                src={reviewFirstQuotePhotos[3]!.src}
-                alt={reviewFirstQuotePhotos[3]!.alt}
-              />
+              {reviewFirstQuoteStripPhotos.map((p) => (
+                <StoryThumbPortraitFeatured key={p.src} src={p.src} alt={p.alt} />
+              ))}
             </StoryPhotoStrip>
 
             <div className="flex w-full min-w-0 max-w-xl flex-col items-center justify-center text-center">
@@ -186,7 +177,7 @@ export default function GalleryPage() {
             More florals
           </p>
           <div className="mx-auto mt-5 grid max-w-5xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-2.5 md:grid-cols-4 md:gap-2.5 lg:grid-cols-5 lg:gap-2.5">
-            {weddingPhotos.map((photo, i) => (
+            {moreFloralsPhotos.map((photo, i) => (
               <CollagePhotoCell key={photo.src} photo={photo} treatment={collageTreatment(i)} />
             ))}
           </div>
