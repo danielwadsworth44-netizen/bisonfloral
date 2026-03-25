@@ -3,30 +3,19 @@ import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import type { WeddingPhoto } from "@/content/wedding-photos";
-import { reviewStripBottom, reviewStripTop, weddingPhotos } from "@/content/wedding-photos";
+import { reviewFirstQuotePhotos, reviewSecondQuotePhotos, weddingPhotos } from "@/content/wedding-photos";
 
 export const metadata: Metadata = {
   title: "Gallery",
 };
 
-/** Focal variety only — always object-cover so cells fill with no letterboxing. */
-const photoTreatments: Array<"cover-center" | "cover-top" | "cover-bottom"> = [
-  "cover-top",
-  "cover-center",
-  "cover-bottom",
-  "cover-center",
-  "cover-top",
-  "cover-center",
-  "cover-bottom",
-  "cover-center",
-  "cover-top",
-  "cover-bottom",
-  "cover-center",
-  "cover-top",
-  "cover-bottom",
-  "cover-center",
-  "cover-top",
-];
+type CollageTreatment = "cover-center" | "cover-top" | "cover-bottom";
+
+const treatmentCycle: CollageTreatment[] = ["cover-top", "cover-center", "cover-bottom"];
+
+function collageTreatment(i: number): CollageTreatment {
+  return treatmentCycle[i % treatmentCycle.length]!;
+}
 
 const gridSizes =
   "(max-width: 640px) 48vw, (max-width: 1024px) 24vw, calc((min(80rem,100vw) - 4rem) / 5)";
@@ -36,7 +25,7 @@ function CollagePhotoCell({
   treatment,
 }: {
   photo: WeddingPhoto;
-  treatment: (typeof photoTreatments)[number];
+  treatment: CollageTreatment;
 }) {
   const objectClass =
     treatment === "cover-center"
@@ -48,47 +37,6 @@ function CollagePhotoCell({
   return (
     <div className="relative aspect-[4/5] w-full min-w-0 overflow-hidden rounded-lg border border-[#972d3e]/10 bg-[#2a1815] shadow-sm">
       <Image src={photo.src} alt={photo.alt} fill sizes={gridSizes} className={objectClass} />
-    </div>
-  );
-}
-
-/** Top-left: submark. Bottom row: full-width wordmark cell aligns to row height from photo cell. */
-function GalleryLogoCorner({
-  position,
-  className = "",
-}: {
-  position: "top-left" | "bottom-right";
-  className?: string;
-}) {
-  if (position === "top-left") {
-    return (
-      <div
-        className={`flex aspect-[4/5] w-full min-w-0 flex-col items-center justify-center rounded-lg border border-[#972d3e]/10 bg-surface p-3 shadow-sm ${className}`}
-        aria-hidden
-      >
-        <Image
-          src="/brand/logo-submark.svg"
-          alt=""
-          width={399}
-          height={304}
-          className="h-auto w-[min(72%,6.25rem)] opacity-[0.42] sm:w-[min(70%,7rem)]"
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div
-      className={`flex h-full min-h-0 w-full min-w-0 flex-col items-center justify-center rounded-lg border border-[#972d3e]/10 bg-surface p-3 shadow-sm sm:items-end sm:pr-5 ${className}`}
-      aria-hidden
-    >
-      <Image
-        src="/brand/logo-secondary.svg"
-        alt=""
-        width={396}
-        height={274}
-        className="h-auto w-[min(92%,9.5rem)] opacity-[0.5] sm:w-[min(90%,10.5rem)]"
-      />
     </div>
   );
 }
@@ -159,12 +107,20 @@ export default function GalleryPage() {
           <div className="mx-auto mt-6 flex w-full max-w-5xl flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-12">
             <StoryPhotoStrip className="w-full shrink-0 lg:w-auto">
               <StoryThumbPortraitFeatured
-                src={reviewStripTop[0].src}
-                alt={reviewStripTop[0].alt}
+                src={reviewFirstQuotePhotos[0]!.src}
+                alt={reviewFirstQuotePhotos[0]!.alt}
               />
-              <StoryThumbPortraitFeatured
-                src={reviewStripTop[1].src}
-                alt={reviewStripTop[1].alt}
+              <StoryThumbLandscape
+                src={reviewFirstQuotePhotos[1]!.src}
+                alt={reviewFirstQuotePhotos[1]!.alt}
+              />
+              <StoryThumbLandscape
+                src={reviewFirstQuotePhotos[2]!.src}
+                alt={reviewFirstQuotePhotos[2]!.alt}
+              />
+              <StoryThumbPortrait
+                src={reviewFirstQuotePhotos[3]!.src}
+                alt={reviewFirstQuotePhotos[3]!.alt}
               />
             </StoryPhotoStrip>
 
@@ -203,16 +159,16 @@ export default function GalleryPage() {
 
               <StoryPhotoStrip className="order-1 w-full shrink-0 lg:order-2 lg:w-auto">
                 <StoryThumbLandscape
-                  src={reviewStripBottom[0].src}
-                  alt={reviewStripBottom[0].alt}
+                  src={reviewSecondQuotePhotos[0]!.src}
+                  alt={reviewSecondQuotePhotos[0]!.alt}
                 />
                 <StoryThumbPortrait
-                  src={reviewStripBottom[1].src}
-                  alt={reviewStripBottom[1].alt}
+                  src={reviewSecondQuotePhotos[1]!.src}
+                  alt={reviewSecondQuotePhotos[1]!.alt}
                 />
                 <StoryThumbPortrait
-                  src={reviewStripBottom[2].src}
-                  alt={reviewStripBottom[2].alt}
+                  src={reviewSecondQuotePhotos[2]!.src}
+                  alt={reviewSecondQuotePhotos[2]!.alt}
                 />
               </StoryPhotoStrip>
             </div>
@@ -229,38 +185,10 @@ export default function GalleryPage() {
           >
             More florals
           </p>
-          {/*
-            15 wedding photos + submark + wordmark. Desktop: 5×4 — last row is [P15][wordmark ×4].
-            Same aspect ratio on single-column cells keeps row tops/bottoms aligned; cover fills cells.
-          */}
           <div className="mx-auto mt-5 grid max-w-5xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-2.5 md:grid-cols-4 md:gap-2.5 lg:grid-cols-5 lg:gap-2.5">
-            <GalleryLogoCorner position="top-left" />
-            {weddingPhotos.slice(0, 4).map((photo, i) => (
-              <CollagePhotoCell key={photo.src} photo={photo} treatment={photoTreatments[i]!} />
+            {weddingPhotos.map((photo, i) => (
+              <CollagePhotoCell key={photo.src} photo={photo} treatment={collageTreatment(i)} />
             ))}
-            {weddingPhotos.slice(4, 9).map((photo, i) => (
-              <CollagePhotoCell
-                key={photo.src}
-                photo={photo}
-                treatment={photoTreatments[4 + i]!}
-              />
-            ))}
-            {weddingPhotos.slice(9, 14).map((photo, i) => (
-              <CollagePhotoCell
-                key={photo.src}
-                photo={photo}
-                treatment={photoTreatments[9 + i]!}
-              />
-            ))}
-            <CollagePhotoCell
-              key={weddingPhotos[14]!.src}
-              photo={weddingPhotos[14]!}
-              treatment={photoTreatments[14]!}
-            />
-            <GalleryLogoCorner
-              position="bottom-right"
-              className="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-4"
-            />
           </div>
         </section>
       </main>

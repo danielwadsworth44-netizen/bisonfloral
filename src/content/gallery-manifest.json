@@ -21,7 +21,7 @@
     { "out": "18-sweetheart-table-ground-florals.jpg", "match": "IMG_2109-8a21d613-" }
   ],
   "reviewSlots": {
-    "__readme": "Set enabled true and add {out, match} rows; name uploads review-top-pillars-UUID.png etc. Then point reviewStripTop/Bottom in wedding-photos.ts at those files.",
+    "__readme": "Set enabled true and add {out, match} rows for optional bottom-strip-only imports. First quote uses review-quote-*.jpg in wedding-photos.ts.",
     "enabled": false,
     "top": [],
     "bottom": []

@@ -7,9 +7,8 @@
  *
  * Slot **01** is also the home page “What we do” image (`homeWeddingPhoto`).
  *
- * **Bride quote strips:** Until `reviewSlots.enabled` in the manifest + matching `review-*.jpg` exist,
- * strips reuse collage slots **15+14** (top) and **16–18** (bottom). When you add review-only shots,
- * enable `reviewSlots` in the manifest, run import, then switch this file to `photo("review-top-…")` entries.
+ * **First quote strip:** Dedicated `review-quote-*.jpg` files (imported from client EKP assets).
+ * **Second quote strip:** Dedicated `review-second-quote-*.jpg` files.
  */
 
 const dir = "/images/weddings";
@@ -25,7 +24,7 @@ function photo(file: string, width: number, height: number, alt: string): Weddin
   return { src: `${dir}/${file}`, width, height, alt };
 }
 
-/** 18 slots: [0..14] = “More florals” grid; [15..17] also used for bottom review strip until review JPEGs exist. */
+/** Collage “More florals” grid (each file once; not reused in the first quote strip). */
 export const weddingPhotos: WeddingPhoto[] = [
   photo(
     "01-bride-field-ground-florals.jpg",
@@ -137,14 +136,57 @@ export const weddingPhotos: WeddingPhoto[] = [
   ),
 ];
 
-/** Top strip: slots 15 then 14 (pillars + river). Swap manifest rows if you need a different pair. */
-export const reviewStripTop: [WeddingPhoto, WeddingPhoto] = [weddingPhotos[14]!, weddingPhotos[13]!];
+/** First bride-quote strip (four images, no overlap with `weddingPhotos` filenames). */
+export const reviewFirstQuotePhotos: WeddingPhoto[] = [
+  photo(
+    "review-quote-1.jpg",
+    683,
+    1024,
+    "Bride with four bridesmaids in champagne dresses, peach and white bouquets, wooden mountain lodge behind",
+  ),
+  photo(
+    "review-quote-2.jpg",
+    1024,
+    683,
+    "Groom kissing bride on the cheek; bride smiles at camera with peach, orange, and cream bouquet, golden hour",
+  ),
+  photo(
+    "review-quote-3.jpg",
+    1024,
+    683,
+    "Outdoor sweetheart table with dark wood, pastel florals, candles, and boulder and pine backdrop",
+  ),
+  photo(
+    "review-quote-4.jpg",
+    683,
+    1024,
+    "Bride and groom at sweetheart dinner from above, ground floral installation and string lights",
+  ),
+];
 
-/** Bottom strip: slots 16–18. Replace with `review-bottom-*.jpg` when manifest.reviewSlots is enabled. */
-export const reviewStripBottom: [WeddingPhoto, WeddingPhoto, WeddingPhoto] = [
-  weddingPhotos[15]!,
-  weddingPhotos[16]!,
-  weddingPhotos[17]!,
+/**
+ * Second bride-quote strip (three images, no overlap with `weddingPhotos`).
+ * Order matches the gallery row: landscape, portrait, portrait.
+ */
+export const reviewSecondQuotePhotos: WeddingPhoto[] = [
+  photo(
+    "review-second-quote-3.jpg",
+    1024,
+    683,
+    "Wedding party in a meadow with peach, yellow, and blue bouquets; wooden fence and pine-covered mountain behind",
+  ),
+  photo(
+    "review-second-quote-1.jpg",
+    683,
+    1024,
+    "Two lush floral pillars framing an outdoor ceremony, coral and peach blooms with blue accents, mountain meadow",
+  ),
+  photo(
+    "review-second-quote-2.jpg",
+    683,
+    1024,
+    "Bride in lace gown with long train by a river, vibrant yellow and orange bouquet with trailing ribbons",
+  ),
 ];
 
 /** Home — second image on landing (after hero): same as gallery slot 01. */
