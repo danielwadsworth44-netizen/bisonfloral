@@ -5,9 +5,12 @@ import { siteNav } from "@/components/site-data";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-[#972d3e]/10 bg-background/90 pt-[env(safe-area-inset-top,0px)] backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col items-center gap-3 px-4 py-3 sm:px-5 md:px-8 lg:flex-row lg:items-center lg:justify-between">
-        <div className="w-full shrink-0 text-center lg:w-auto lg:text-left">
-          <Link href="/" className="inline-flex max-w-full shrink-0 items-center">
+      <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-3 px-4 py-3 sm:px-5 md:px-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex w-full shrink-0 justify-center lg:w-auto lg:justify-start">
+          <Link
+            href="/"
+            className="mx-auto flex max-w-full shrink-0 items-center justify-center lg:mx-0"
+          >
             <Image
               src="/brand/logo-primary.svg"
               alt="Bison Floral"
