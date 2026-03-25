@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "wedding:ingest": "node scripts/ingest-wedding-photos.mjs"
   },
   "dependencies": {
     "next": "16.2.1",

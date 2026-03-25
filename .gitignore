@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Local photo drops (run npm run wedding:ingest — do not commit raw exports)
+public/images/weddings/_incoming/*
+!public/images/weddings/_incoming/.gitkeep
+!public/images/weddings/_incoming/README.txt
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
