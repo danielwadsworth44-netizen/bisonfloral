@@ -157,18 +157,18 @@ export default function Home() {
         </section>
 
         <section className="border-t border-[#972d3e]/10 bg-[linear-gradient(180deg,#f5dfe8_0%,#edc9d6_100%)]">
-          <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-5 px-4 py-9 sm:px-5 md:flex-row md:items-center md:justify-between md:px-8 md:py-10">
+          <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-4 px-4 py-6 sm:px-5 sm:py-7 md:flex-row md:items-center md:justify-between md:gap-6 md:px-8 md:py-8">
             <div className={`min-w-0 max-w-md ${inquireCopy.className}`} style={inquireCopy.style}>
               <p className="text-xs uppercase tracking-[0.28em] text-[#c45c73]">Inquire</p>
-              <h2 className="mt-3 text-nowrap [font-family:var(--font-display)] text-2xl leading-tight sm:text-3xl">
+              <h2 className="mt-2 text-nowrap [font-family:var(--font-display)] text-2xl leading-tight sm:text-3xl">
                 For couples who care about details
               </h2>
-              <p className="mt-2 text-sm leading-6 text-[#4b3833]">
+              <p className="mt-1.5 text-sm leading-6 text-[#4b3833]">
                 If that&apos;s you, we&apos;d love to connect.
               </p>
             </div>
             <div
-              className={`flex flex-col gap-3 sm:flex-row sm:items-center ${inquireActions.className}`}
+              className={`flex flex-col gap-2.5 sm:flex-row sm:items-center sm:gap-3 ${inquireActions.className}`}
               style={inquireActions.style}
             >
               <Link

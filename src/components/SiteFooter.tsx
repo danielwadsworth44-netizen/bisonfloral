@@ -5,7 +5,7 @@ import { instagramUrl, siteNav } from "@/components/site-data";
 export function SiteFooter() {
   return (
     <footer className="border-t border-[#972d3e]/12 bg-surface text-[#241915]">
-      <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col items-center gap-6 px-4 py-8 pb-[max(2rem,env(safe-area-inset-bottom,0px))] text-center sm:px-5 md:px-8">
+      <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col items-center gap-4 px-4 py-6 pb-[max(1.25rem,env(safe-area-inset-bottom,0px))] text-center sm:px-5 md:px-8">
         <div className="flex w-full max-w-sm flex-col items-center">
           <Image
             src="/brand/logo-primary.svg"
@@ -14,7 +14,7 @@ export function SiteFooter() {
             height={145}
             className="h-auto w-[min(100%,200px)] sm:w-[220px]"
           />
-          <p className="mt-4 text-sm leading-6 text-[#4b3833]">
+          <p className="mt-3 text-sm leading-6 text-[#4b3833]">
             Montana wedding florals—intentional, romantic, rooted in place.
           </p>
         </div>
@@ -42,7 +42,7 @@ export function SiteFooter() {
           </a>
         </nav>
 
-        <p className="mt-2 max-w-2xl text-center text-[0.7rem] leading-relaxed text-[#6f3944] sm:text-xs">
+        <p className="max-w-2xl text-center text-[0.7rem] leading-relaxed text-[#6f3944] sm:text-xs">
           <span className="opacity-95">Website by </span>
           <a
             href="https://theclickbuilders.com"
