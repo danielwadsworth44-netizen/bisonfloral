@@ -26,11 +26,8 @@ export default function Home() {
           <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-6 px-4 py-8 sm:px-5 md:px-8 md:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)] lg:items-center lg:gap-10 lg:py-11">
             <div className={`min-w-0 max-w-xl ${heroCopy.className}`} style={heroCopy.style}>
               <p className="mb-3 text-xs uppercase tracking-[0.28em] text-[#c45c73]">Flathead Valley · Montana</p>
-              <h1 className="text-balance text-[2rem] leading-[1.02] sm:text-5xl sm:leading-[0.98] md:text-6xl lg:text-7xl">
-                <span className="font-[family:var(--font-script)] text-[2.35rem] sm:text-[2.85rem] md:text-[3.5rem] lg:text-[4.25rem]">
-                  Wild heart.
-                </span>{" "}
-                <span className="font-[family:var(--font-display)] font-medium">Quiet luxury.</span>
+              <h1 className="text-balance font-[family:var(--font-script)] text-[2.35rem] leading-[1.06] sm:text-[2.85rem] sm:leading-[1.04] md:text-[3.5rem] md:leading-[1.02] lg:text-[4.25rem] lg:leading-[1]">
+                Wild heart. Quiet luxury.
               </h1>
               <p className="mt-5 max-w-md text-base leading-7 text-[#4b3833]">
                 Floral design for days that feel as beautiful as they look
@@ -144,6 +141,9 @@ export default function Home() {
               className={`rounded-2xl border border-[#d96889]/20 bg-surface/95 px-5 py-7 shadow-[0_8px_28px_rgba(151,45,62,0.05)] md:px-8 ${galleryTeaser.className}`}
               style={galleryTeaser.style}
             >
+              <p className="mb-5 font-[family:var(--font-script)] text-xl leading-snug text-[#4b3833] sm:text-2xl md:text-[1.65rem]">
+                a look into our recent work
+              </p>
               <Link
                 href="/gallery"
                 className="inline-flex min-h-11 items-center justify-center text-sm font-semibold uppercase tracking-[0.2em] text-[#972d3e] underline decoration-[#972d3e]/30 underline-offset-8 transition hover:decoration-[#972d3e]"

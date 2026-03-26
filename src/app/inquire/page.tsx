@@ -14,17 +14,16 @@ export default function InquirePage() {
     <div className="min-h-screen min-w-0 bg-background text-[#241915]">
       <SiteHeader />
       <main className="mx-auto w-full max-w-3xl min-w-0 px-4 py-8 sm:px-5 md:px-8 md:py-10">
-        <div className="max-w-full rounded-3xl border border-[#d96889]/20 bg-surface p-5 shadow-[0_12px_40px_rgba(151,45,62,0.07)] sm:p-6 md:p-9">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Inquire</p>
-              <h1 className="mt-2 font-[family:var(--font-display)] text-3xl italic leading-[0.95] md:text-4xl">
-                I had a feeling you&apos;d be here…
-              </h1>
-              <p className="mt-2 font-[family:var(--font-body)] text-sm text-[#4b3833]">
-                Fill out the form to get started!
-              </p>
-            </div>
+        <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Inquire</p>
+        <h1 className="mt-2 font-[family:var(--font-script)] text-[2.1rem] leading-[1.05] text-[#241915] sm:text-4xl md:text-[2.65rem]">
+          I had a feeling you&apos;d be here…
+        </h1>
+        <p className="mt-2 font-[family:var(--font-script)] text-lg leading-snug text-[#4b3833] sm:text-xl md:text-2xl">
+          Fill out the form to get started!
+        </p>
+
+        <div className="mt-8 max-w-full rounded-3xl border border-[#d96889]/20 bg-surface p-5 shadow-[0_12px_40px_rgba(151,45,62,0.07)] sm:p-6 md:p-9">
+          <div className="flex justify-end">
             <div className="w-36 shrink-0 rounded-xl border border-[#972d3e]/10 bg-surface-elevated/90 p-3 sm:w-40">
               <Image
                 src="/brand/logo-secondary.svg"

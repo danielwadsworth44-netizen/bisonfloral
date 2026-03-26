@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Great_Vibes, Manrope } from "next/font/google";
+import { Allura, Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -8,7 +8,7 @@ const display = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-const script = Great_Vibes({
+const script = Allura({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-script",
