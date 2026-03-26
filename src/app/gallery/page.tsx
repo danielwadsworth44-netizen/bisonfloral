@@ -93,15 +93,20 @@ function StoryThumbPortrait({
   src,
   alt,
   floatStep,
+  compactOnMobile,
 }: {
   src: string;
   alt: string;
   floatStep?: number;
+  /** ~5% smaller below `sm` so horizontal strips fit without scroll */
+  compactOnMobile?: boolean;
 }) {
   const anim = floatStep !== undefined ? floatStyle(floatStep) : null;
+  const mobilePortrait =
+    compactOnMobile === true ? "h-[11.163rem] w-[7.268rem]" : "h-[11.75rem] w-[7.65rem]";
   return (
     <div
-      className={`relative h-[11.75rem] w-[7.65rem] shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-56 sm:w-[9.25rem] md:h-[15.75rem] md:w-40 ${anim?.className ?? ""}`}
+      className={`relative ${mobilePortrait} shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-56 sm:w-[9.25rem] md:h-[15.75rem] md:w-40 ${anim?.className ?? ""}`}
       style={anim?.style}
     >
       <Image src={src} alt={alt} fill sizes="(max-width: 640px) 32vw, 160px" className="object-cover" />
@@ -113,15 +118,19 @@ function StoryThumbLandscape({
   src,
   alt,
   floatStep,
+  compactOnMobile,
 }: {
   src: string;
   alt: string;
   floatStep?: number;
+  compactOnMobile?: boolean;
 }) {
   const anim = floatStep !== undefined ? floatStyle(floatStep) : null;
+  const mobileLand =
+    compactOnMobile === true ? "h-[11.163rem] w-[15.438rem]" : "h-[11.75rem] w-[16.25rem]";
   return (
     <div
-      className={`relative h-[11.75rem] w-[16.25rem] shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-56 sm:w-[19.5rem] md:h-[15.75rem] md:w-[22.5rem] ${anim?.className ?? ""}`}
+      className={`relative ${mobileLand} shrink-0 overflow-hidden rounded-xl border border-[#972d3e]/10 bg-surface-elevated shadow-sm sm:h-56 sm:w-[19.5rem] md:h-[15.75rem] md:w-[22.5rem] ${anim?.className ?? ""}`}
       style={anim?.style}
     >
       <Image src={src} alt={alt} fill sizes="(max-width: 640px) 68vw, 340px" className="object-cover" />
@@ -141,8 +150,8 @@ export default function GalleryPage() {
       <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8 sm:px-5 md:px-8 md:py-10">
         <div className={`max-w-5xl ${introAnim.className}`} style={introAnim.style}>
           <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Gallery</p>
-          <div className="-mx-4 overflow-x-auto overflow-y-hidden px-4 [-webkit-overflow-scrolling:touch] sm:mx-0 sm:overflow-visible sm:px-0">
-            <h1 className="mt-2 w-max max-w-none text-nowrap [font-family:var(--font-display)] text-xl leading-tight sm:text-2xl md:text-3xl">
+          <div className="max-sm:mx-0 max-sm:overflow-visible max-sm:px-0 sm:-mx-4 sm:overflow-x-auto sm:overflow-y-hidden sm:px-4 sm:[-webkit-overflow-scrolling:touch] md:mx-0 md:overflow-visible md:px-0">
+            <h1 className="mt-2 text-balance [font-family:var(--font-display)] text-xl leading-tight max-sm:whitespace-normal sm:w-max sm:max-w-none sm:whitespace-nowrap sm:text-2xl md:text-3xl">
               A glimpse into recent weddings, color stories, and floral moments
             </h1>
           </div>
@@ -210,17 +219,20 @@ export default function GalleryPage() {
                   src={reviewSecondQuotePhotos[0]!.src}
                   alt={reviewSecondQuotePhotos[0]!.alt}
                   floatStep={1}
+                  compactOnMobile
                 />
                 <StoryThumbPortrait
                   src={reviewSecondQuotePhotos[1]!.src}
                   alt={reviewSecondQuotePhotos[1]!.alt}
                   floatStep={2}
+                  compactOnMobile
                 />
                 <div className="hidden min-w-0 md:contents">
                   <StoryThumbPortrait
                     src={reviewSecondQuotePhotos[2]!.src}
                     alt={reviewSecondQuotePhotos[2]!.alt}
                     floatStep={3}
+                    compactOnMobile
                   />
                 </div>
               </StoryPhotoStrip>
