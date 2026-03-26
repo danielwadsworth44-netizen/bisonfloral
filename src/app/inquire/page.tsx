@@ -14,8 +14,10 @@ export default function InquirePage() {
       <main className="mx-auto w-full max-w-3xl min-w-0 px-4 py-8 sm:px-5 md:px-8 md:py-10">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
           <div className="min-w-0 flex-1">
-            <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Inquire</p>
-            <h1 className="mt-2 [font-family:var(--font-script)] text-[1.58rem] leading-[1.05] text-[#241915] sm:text-[1.69rem] md:text-[1.99rem]">
+            <p className="mb-5 text-xs uppercase tracking-[0.28em] text-[#972d3e] sm:mb-6">
+              Inquire
+            </p>
+            <h1 className="pt-1 [font-family:var(--font-script)] text-[1.58rem] leading-[1.12] text-[#241915] sm:pt-1.5 sm:text-[1.69rem] sm:leading-[1.1] md:text-[1.99rem] md:leading-[1.08]">
               I had a feeling you&apos;d be here…
             </h1>
             <p className="mt-2 text-base leading-snug text-[#4b3833] sm:text-lg">

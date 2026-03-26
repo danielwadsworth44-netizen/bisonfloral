@@ -25,10 +25,10 @@ export default function Home() {
         <section className="bg-[linear-gradient(180deg,#fae8ef_0%,#f3d8e4_100%)] text-[#241915]">
           <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-6 px-4 py-8 sm:px-5 md:px-8 md:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)] lg:items-center lg:gap-10 lg:py-11">
             <div className={`min-w-0 max-w-xl ${heroCopy.className}`} style={heroCopy.style}>
-              <p className="mb-8 text-xs uppercase tracking-[0.28em] text-[#c45c73] sm:mb-9">
+              <p className="mb-5 text-xs uppercase tracking-[0.28em] text-[#c45c73] sm:mb-6">
                 Flathead Valley · Montana
               </p>
-              <h1 className="text-balance [font-family:var(--font-script)] pt-2 text-[1.76rem] leading-[1.18] sm:pt-3 sm:text-[2.14rem] sm:leading-[1.14] md:pt-4 md:text-[2.63rem] md:leading-[1.1] lg:text-[3.19rem] lg:leading-[1.08]">
+              <h1 className="text-balance [font-family:var(--font-script)] pt-1 text-[1.76rem] leading-[1.12] sm:pt-2 sm:text-[2.14rem] sm:leading-[1.1] md:text-[2.63rem] md:leading-[1.08] lg:text-[3.19rem] lg:leading-[1.06]">
                 Wild heart. Quiet luxury.
               </h1>
               <p className="mt-5 max-w-md text-base leading-7 text-[#4b3833]">
@@ -138,12 +138,12 @@ export default function Home() {
         </section>
 
         <section className="border-t border-[#972d3e]/10 bg-background">
-          <div className="mx-auto max-w-2xl min-w-0 px-4 py-8 text-center sm:px-5 md:px-8 md:py-10">
+          <div className="mx-auto max-w-2xl min-w-0 px-4 py-6 text-center sm:px-5 sm:py-7 md:px-8 md:py-8">
             <div
-              className={`rounded-2xl border border-[#d96889]/20 bg-surface/95 px-5 py-8 shadow-[0_8px_28px_rgba(151,45,62,0.05)] md:px-8 md:py-9 ${galleryTeaser.className}`}
+              className={`rounded-2xl border border-[#d96889]/20 bg-surface/95 px-5 py-6 shadow-[0_8px_28px_rgba(151,45,62,0.05)] md:px-8 md:py-7 ${galleryTeaser.className}`}
               style={galleryTeaser.style}
             >
-              <p className="mb-7 [font-family:var(--font-script)] text-[1.2rem] leading-[1.35] text-[#4b3833] sm:mb-8 sm:text-[1.45rem] sm:leading-[1.32] md:text-[1.6rem] md:leading-[1.28]">
+              <p className="mb-5 [font-family:var(--font-script)] text-[1.2rem] leading-[1.28] text-[#4b3833] sm:mb-6 sm:text-[1.45rem] sm:leading-[1.24] md:text-[1.6rem] md:leading-[1.22]">
                 a look into our recent work
               </p>
               <Link
