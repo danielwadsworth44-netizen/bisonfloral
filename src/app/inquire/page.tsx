@@ -20,8 +20,8 @@ export default function InquirePage() {
             <h1 className="pt-1 [font-family:var(--font-script)] text-[1.58rem] leading-[1.12] text-[#241915] sm:pt-1.5 sm:text-[1.69rem] sm:leading-[1.1] md:text-[1.99rem] md:leading-[1.08]">
               I had a feeling you&apos;d be here…
             </h1>
-            <p className="mt-2 text-base leading-snug text-[#4b3833] sm:text-lg">
-              Share your details in the form below—it connects straight to our HoneyBook inbox.
+            <p className="mt-2 [font-family:var(--font-script)] text-lg leading-snug text-[#4b3833] sm:text-xl md:text-2xl">
+              Fill out the form to get started!
             </p>
           </div>
           <div className="mx-auto w-[7.5rem] shrink-0 rounded-xl border border-[#972d3e]/10 bg-surface-elevated/90 p-2 sm:mx-0 sm:mt-1 sm:w-[8.25rem] md:w-[9rem]">
