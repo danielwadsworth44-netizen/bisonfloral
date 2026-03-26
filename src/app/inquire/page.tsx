@@ -17,7 +17,7 @@ export default function InquirePage() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
           <div className="min-w-0 flex-1">
             <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Inquire</p>
-            <h1 className="mt-2 [font-family:var(--font-script)] text-[2.1rem] leading-[1.05] text-[#241915] sm:text-4xl md:text-[2.65rem]">
+            <h1 className="mt-2 [font-family:var(--font-script)] text-[1.58rem] leading-[1.05] text-[#241915] sm:text-[1.69rem] md:text-[1.99rem]">
               I had a feeling you&apos;d be here…
             </h1>
             <p className="mt-2 text-base leading-snug text-[#4b3833] sm:text-lg">

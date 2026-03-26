@@ -26,7 +26,7 @@ export default function Home() {
           <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-6 px-4 py-8 sm:px-5 md:px-8 md:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)] lg:items-center lg:gap-10 lg:py-11">
             <div className={`min-w-0 max-w-xl ${heroCopy.className}`} style={heroCopy.style}>
               <p className="mb-3 text-xs uppercase tracking-[0.28em] text-[#c45c73]">Flathead Valley · Montana</p>
-              <h1 className="text-balance [font-family:var(--font-script)] text-[2.35rem] leading-[1.06] sm:text-[2.85rem] sm:leading-[1.04] md:text-[3.5rem] md:leading-[1.02] lg:text-[4.25rem] lg:leading-[1]">
+              <h1 className="text-balance [font-family:var(--font-script)] text-[1.76rem] leading-[1.06] sm:text-[2.14rem] sm:leading-[1.04] md:text-[2.63rem] md:leading-[1.02] lg:text-[3.19rem] lg:leading-[1]">
                 Wild heart. Quiet luxury.
               </h1>
               <p className="mt-5 max-w-md text-base leading-7 text-[#4b3833]">
@@ -141,7 +141,7 @@ export default function Home() {
               className={`rounded-2xl border border-[#d96889]/20 bg-surface/95 px-5 py-7 shadow-[0_8px_28px_rgba(151,45,62,0.05)] md:px-8 ${galleryTeaser.className}`}
               style={galleryTeaser.style}
             >
-              <p className="mb-5 [font-family:var(--font-script)] text-xl leading-snug text-[#4b3833] sm:text-2xl md:text-[1.65rem]">
+              <p className="mb-5 [font-family:var(--font-script)] text-[0.94rem] leading-snug text-[#4b3833] sm:text-[1.125rem] md:text-[1.24rem]">
                 a look into our recent work
               </p>
               <Link
