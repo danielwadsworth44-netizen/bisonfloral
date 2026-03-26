@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Allura, Cormorant_Garamond, Manrope } from "next/font/google";
+import localFont from "next/font/local";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -8,10 +9,11 @@ const display = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-const script = Allura({
-  weight: "400",
-  subsets: ["latin"],
+const script = localFont({
+  src: "../fonts/AnturaScript.otf",
   variable: "--font-script",
+  display: "swap",
+  weight: "400",
 });
 
 const sans = Manrope({

@@ -158,7 +158,7 @@ export default function Home() {
           <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-5 px-4 py-9 sm:px-5 md:flex-row md:items-center md:justify-between md:px-8 md:py-10">
             <div className={`min-w-0 max-w-md ${inquireCopy.className}`} style={inquireCopy.style}>
               <p className="text-xs uppercase tracking-[0.28em] text-[#c45c73]">Inquire</p>
-              <h2 className="mt-3 text-balance [font-family:var(--font-display)] text-2xl leading-tight sm:text-3xl md:text-4xl">
+              <h2 className="mt-3 text-nowrap [font-family:var(--font-display)] text-2xl leading-tight sm:text-3xl">
                 For couples who care about details
               </h2>
               <p className="mt-2 text-sm leading-6 text-[#4b3833]">
