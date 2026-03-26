@@ -139,11 +139,13 @@ export default function GalleryPage() {
     <div className="min-h-screen min-w-0 bg-background text-[#241915]">
       <SiteHeader />
       <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8 sm:px-5 md:px-8 md:py-10">
-        <div className={`max-w-xl ${introAnim.className}`} style={introAnim.style}>
+        <div className={`max-w-5xl ${introAnim.className}`} style={introAnim.style}>
           <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Gallery</p>
-          <h1 className="mt-2 text-balance [font-family:var(--font-display)] text-2xl leading-snug md:text-3xl md:leading-snug">
-            A glimpse into recent weddings, color stories, and floral moments
-          </h1>
+          <div className="-mx-4 overflow-x-auto overflow-y-hidden px-4 [-webkit-overflow-scrolling:touch] sm:mx-0 sm:overflow-visible sm:px-0">
+            <h1 className="mt-2 w-max max-w-none text-nowrap [font-family:var(--font-display)] text-xl leading-tight sm:text-2xl md:text-3xl">
+              A glimpse into recent weddings, color stories, and floral moments
+            </h1>
+          </div>
         </div>
 
         <section
