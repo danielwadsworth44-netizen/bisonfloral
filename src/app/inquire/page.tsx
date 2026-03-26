@@ -18,10 +18,12 @@ export default function InquirePage() {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Inquire</p>
-              <h1 className="mt-2 font-[family:var(--font-display)] text-3xl leading-[0.95] md:text-4xl">
-                Say hello
+              <h1 className="mt-2 font-[family:var(--font-display)] text-3xl italic leading-[0.95] md:text-4xl">
+                I had a feeling you&apos;d be here…
               </h1>
-              <p className="mt-2 text-sm text-[#4b3833]">A few details help Avery reply with care.</p>
+              <p className="mt-2 font-[family:var(--font-body)] text-sm text-[#4b3833]">
+                Fill out the form to get started!
+              </p>
             </div>
             <div className="w-36 shrink-0 rounded-xl border border-[#972d3e]/10 bg-surface-elevated/90 p-3 sm:w-40">
               <Image

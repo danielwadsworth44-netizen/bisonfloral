@@ -141,8 +141,8 @@ export default function GalleryPage() {
       <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8 sm:px-5 md:px-8 md:py-10">
         <div className={`max-w-xl ${introAnim.className}`} style={introAnim.style}>
           <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Gallery</p>
-          <h1 className="mt-2 font-[family:var(--font-display)] text-3xl leading-[0.95] md:text-4xl">
-            Work from real days
+          <h1 className="mt-2 text-balance font-[family:var(--font-display)] text-2xl leading-snug md:text-3xl md:leading-snug">
+            A glimpse into recent weddings, color stories, and floral moments
           </h1>
         </div>
 

@@ -16,6 +16,7 @@
   --color-surface-elevated: var(--surface-elevated);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
+  --font-script: var(--font-script);
 }
 
 * {
