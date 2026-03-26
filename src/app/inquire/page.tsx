@@ -15,10 +15,10 @@ export default function InquirePage() {
       <SiteHeader />
       <main className="mx-auto w-full max-w-3xl min-w-0 px-4 py-8 sm:px-5 md:px-8 md:py-10">
         <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Inquire</p>
-        <h1 className="mt-2 font-[family:var(--font-script)] text-[2.1rem] leading-[1.05] text-[#241915] sm:text-4xl md:text-[2.65rem]">
+        <h1 className="mt-2 [font-family:var(--font-script)] text-[2.1rem] leading-[1.05] text-[#241915] sm:text-4xl md:text-[2.65rem]">
           I had a feeling you&apos;d be here…
         </h1>
-        <p className="mt-2 font-[family:var(--font-script)] text-lg leading-snug text-[#4b3833] sm:text-xl md:text-2xl">
+        <p className="mt-2 [font-family:var(--font-script)] text-lg leading-snug text-[#4b3833] sm:text-xl md:text-2xl">
           Fill out the form to get started!
         </p>
 

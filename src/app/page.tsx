@@ -26,7 +26,7 @@ export default function Home() {
           <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-6 px-4 py-8 sm:px-5 md:px-8 md:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)] lg:items-center lg:gap-10 lg:py-11">
             <div className={`min-w-0 max-w-xl ${heroCopy.className}`} style={heroCopy.style}>
               <p className="mb-3 text-xs uppercase tracking-[0.28em] text-[#c45c73]">Flathead Valley · Montana</p>
-              <h1 className="text-balance font-[family:var(--font-script)] text-[2.35rem] leading-[1.06] sm:text-[2.85rem] sm:leading-[1.04] md:text-[3.5rem] md:leading-[1.02] lg:text-[4.25rem] lg:leading-[1]">
+              <h1 className="text-balance [font-family:var(--font-script)] text-[2.35rem] leading-[1.06] sm:text-[2.85rem] sm:leading-[1.04] md:text-[3.5rem] md:leading-[1.02] lg:text-[4.25rem] lg:leading-[1]">
                 Wild heart. Quiet luxury.
               </h1>
               <p className="mt-5 max-w-md text-base leading-7 text-[#4b3833]">
@@ -89,7 +89,7 @@ export default function Home() {
                 style={whatCard.style}
               >
                 <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">What we do</p>
-                <h2 className="mt-3 text-balance font-[family:var(--font-display)] text-2xl leading-tight sm:text-3xl md:text-4xl">
+                <h2 className="mt-3 text-balance [font-family:var(--font-display)] text-2xl leading-tight sm:text-3xl md:text-4xl">
                   Floral design for modern love stories
                 </h2>
                 <p className="mt-4 max-w-md text-sm leading-7 text-[#4b3833] md:text-base">
@@ -110,7 +110,7 @@ export default function Home() {
                 style={wayCard.style}
               >
                 <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">The Bison Floral way</p>
-                <h2 className="mt-3 text-balance font-[family:var(--font-display)] text-2xl leading-tight sm:text-3xl md:text-4xl">
+                <h2 className="mt-3 text-balance [font-family:var(--font-display)] text-2xl leading-tight sm:text-3xl md:text-4xl">
                   Thoughtful design, rooted in intention
                 </h2>
                 <p className="mt-4 max-w-md text-sm leading-7 text-[#4b3833] md:text-base">
@@ -141,7 +141,7 @@ export default function Home() {
               className={`rounded-2xl border border-[#d96889]/20 bg-surface/95 px-5 py-7 shadow-[0_8px_28px_rgba(151,45,62,0.05)] md:px-8 ${galleryTeaser.className}`}
               style={galleryTeaser.style}
             >
-              <p className="mb-5 font-[family:var(--font-script)] text-xl leading-snug text-[#4b3833] sm:text-2xl md:text-[1.65rem]">
+              <p className="mb-5 [font-family:var(--font-script)] text-xl leading-snug text-[#4b3833] sm:text-2xl md:text-[1.65rem]">
                 a look into our recent work
               </p>
               <Link
@@ -158,7 +158,7 @@ export default function Home() {
           <div className="mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-5 px-4 py-9 sm:px-5 md:flex-row md:items-center md:justify-between md:px-8 md:py-10">
             <div className={`min-w-0 max-w-md ${inquireCopy.className}`} style={inquireCopy.style}>
               <p className="text-xs uppercase tracking-[0.28em] text-[#c45c73]">Inquire</p>
-              <h2 className="mt-3 text-balance font-[family:var(--font-display)] text-2xl leading-tight sm:text-3xl md:text-4xl">
+              <h2 className="mt-3 text-balance [font-family:var(--font-display)] text-2xl leading-tight sm:text-3xl md:text-4xl">
                 For couples who care about details
               </h2>
               <p className="mt-2 text-sm leading-6 text-[#4b3833]">

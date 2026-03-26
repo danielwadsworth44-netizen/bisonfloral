@@ -141,7 +141,7 @@ export default function GalleryPage() {
       <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8 sm:px-5 md:px-8 md:py-10">
         <div className={`max-w-xl ${introAnim.className}`} style={introAnim.style}>
           <p className="text-xs uppercase tracking-[0.28em] text-[#972d3e]">Gallery</p>
-          <h1 className="mt-2 text-balance font-[family:var(--font-display)] text-2xl leading-snug md:text-3xl md:leading-snug">
+          <h1 className="mt-2 text-balance [font-family:var(--font-display)] text-2xl leading-snug md:text-3xl md:leading-snug">
             A glimpse into recent weddings, color stories, and floral moments
           </h1>
         </div>
@@ -168,14 +168,14 @@ export default function GalleryPage() {
               className={`flex w-full min-w-0 max-w-xl flex-col items-center justify-center text-center ${firstQuoteAnim.className}`}
               style={firstQuoteAnim.style}
             >
-              <blockquote className="font-[family:var(--font-display)] text-lg leading-snug text-[#241915] sm:text-xl sm:leading-snug md:text-2xl md:leading-snug">
+              <blockquote className="[font-family:var(--font-display)] text-lg leading-snug text-[#241915] sm:text-xl sm:leading-snug md:text-2xl md:leading-snug">
                 <p className="mx-auto max-w-[19rem] text-balance sm:max-w-[22rem] md:max-w-[26rem]">
                   &ldquo;I could not get over the florals—they were stunning. It was everything I
                   wanted and more.&rdquo;
                 </p>
               </blockquote>
               <div className="mx-auto mt-5 h-px w-10 bg-[#d96889]/55" aria-hidden />
-              <blockquote className="mt-5 font-[family:var(--font-display)] text-base leading-snug text-[#4b3833] sm:text-lg sm:leading-relaxed">
+              <blockquote className="mt-5 [font-family:var(--font-display)] text-base leading-snug text-[#4b3833] sm:text-lg sm:leading-relaxed">
                 <p className="mx-auto max-w-[24rem] text-balance">
                   &ldquo;So many compliments on the florals—everyone was blown away.&rdquo;
                 </p>
@@ -189,14 +189,14 @@ export default function GalleryPage() {
                 className={`order-2 flex w-full min-w-0 max-w-xl flex-col items-center justify-center text-center lg:order-1 ${secondQuoteAnim.className}`}
                 style={secondQuoteAnim.style}
               >
-                <blockquote className="font-[family:var(--font-display)] text-xl leading-snug text-[#241915] md:text-2xl md:leading-snug">
+                <blockquote className="[font-family:var(--font-display)] text-xl leading-snug text-[#241915] md:text-2xl md:leading-snug">
                   <p className="text-balance">&ldquo;The best day.&rdquo;</p>
                 </blockquote>
                 <div
                   className="mx-auto mt-5 h-px w-10 bg-[#d96889]/55"
                   aria-hidden
                 />
-                <blockquote className="mt-5 font-[family:var(--font-display)] text-xl leading-snug text-[#4b3833] md:text-2xl md:leading-snug">
+                <blockquote className="mt-5 [font-family:var(--font-display)] text-xl leading-snug text-[#4b3833] md:text-2xl md:leading-snug">
                   <p className="mx-auto max-w-[11rem] text-balance sm:max-w-[13rem]">
                     &ldquo;The most talented florist.&rdquo;
                   </p>

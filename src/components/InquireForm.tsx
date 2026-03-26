@@ -23,10 +23,10 @@ const floralOptions = [
 
 /* text-base (16px) avoids iOS zoom on field focus */
 const lineInput =
-  "w-full min-w-0 border-0 border-b border-[#241915]/45 bg-transparent py-2.5 font-[family:var(--font-display)] text-base text-[#241915] outline-none transition placeholder:text-[#241915]/38 placeholder:italic focus:border-[#972d3e]";
+  "w-full min-w-0 border-0 border-b border-[#241915]/45 bg-transparent py-2.5 [font-family:var(--font-display)] text-base text-[#241915] outline-none transition placeholder:text-[#241915]/38 placeholder:italic focus:border-[#972d3e]";
 
 const labelClass =
-  "block font-[family:var(--font-display)] text-[0.95rem] text-[#241915] md:text-[1rem]";
+  "block [font-family:var(--font-display)] text-[0.95rem] text-[#241915] md:text-[1rem]";
 
 export function InquireForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -34,7 +34,7 @@ export function InquireForm() {
   if (submitted) {
     return (
       <div className="rounded-2xl border border-[#d96889]/25 bg-surface px-5 py-8 text-center shadow-[0_8px_28px_rgba(151,45,62,0.06)]">
-        <p className="font-[family:var(--font-display)] text-xl text-[#241915]">Thank you</p>
+        <p className="[font-family:var(--font-display)] text-xl text-[#241915]">Thank you</p>
         <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#4b3833]">
           Avery will reply soon. Instagram works too if you&apos;re in a hurry.
         </p>
@@ -140,7 +140,7 @@ export function InquireForm() {
             <li key={opt.id}>
               <label
                 htmlFor={`floral-${opt.id}`}
-                className="flex min-h-11 cursor-pointer items-center gap-2.5 rounded-md py-1 font-[family:var(--font-display)] text-sm text-[#241915] leading-tight active:bg-black/[0.03]"
+                className="flex min-h-11 cursor-pointer items-center gap-2.5 rounded-md py-1 [font-family:var(--font-display)] text-sm text-[#241915] leading-tight active:bg-black/[0.03]"
               >
                 <input
                   id={`floral-${opt.id}`}
@@ -178,7 +178,7 @@ export function InquireForm() {
           name="more"
           rows={3}
           placeholder="Palette, wedding party size, photographer—whatever helps"
-          className="mt-2 w-full min-w-0 resize-y border border-[#241915]/18 bg-surface-elevated/90 px-3 py-2.5 font-[family:var(--font-display)] text-base text-[#241915] outline-none placeholder:text-[#241915]/38 placeholder:italic focus:border-[#972d3e]/45"
+          className="mt-2 w-full min-w-0 resize-y border border-[#241915]/18 bg-surface-elevated/90 px-3 py-2.5 [font-family:var(--font-display)] text-base text-[#241915] outline-none placeholder:text-[#241915]/38 placeholder:italic focus:border-[#972d3e]/45"
         />
       </div>
 

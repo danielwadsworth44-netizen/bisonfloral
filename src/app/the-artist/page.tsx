@@ -21,7 +21,7 @@ export default function TheArtistPage() {
           <div className="flex flex-col justify-center bg-[#972d3e] px-5 py-10 text-white sm:px-8 sm:py-12 md:px-12 md:py-16 lg:px-14 lg:py-20">
             <h1
               id="meet-avery-heading"
-              className="text-balance font-[family:var(--font-display)] text-[2.25rem] leading-[0.98] sm:text-5xl md:text-[2.75rem] md:leading-[0.98] lg:text-6xl"
+              className="text-balance [font-family:var(--font-display)] text-[2.25rem] leading-[0.98] sm:text-5xl md:text-[2.75rem] md:leading-[0.98] lg:text-6xl"
             >
               Meet Avery!
             </h1>
