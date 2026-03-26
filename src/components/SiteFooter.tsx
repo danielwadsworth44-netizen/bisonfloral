@@ -20,25 +20,23 @@ export function SiteFooter() {
         </div>
 
         <nav
-          className="flex w-full flex-col items-center gap-3 text-sm text-[#6f3944]"
+          className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm uppercase tracking-[0.2em] text-[#6f3944]"
           aria-label="Footer"
         >
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 uppercase tracking-[0.2em]">
-            {siteNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="inline-flex min-h-10 items-center justify-center py-1 hover:text-[#972d3e]"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          {siteNav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="inline-flex min-h-10 items-center justify-center py-1 hover:text-[#972d3e]"
+            >
+              {item.label}
+            </Link>
+          ))}
           <a
             href={instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-10 items-center justify-center py-1 uppercase tracking-[0.2em] hover:text-[#972d3e]"
+            className="inline-flex min-h-10 items-center justify-center py-1 hover:text-[#972d3e]"
           >
             Instagram
           </a>

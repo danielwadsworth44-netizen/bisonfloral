@@ -3,8 +3,6 @@ import Image from "next/image";
 import { InquireForm } from "@/components/InquireForm";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { instagramUrl } from "@/components/site-data";
-
 export const metadata: Metadata = {
   title: "Inquire",
 };
@@ -37,17 +35,6 @@ export default function InquirePage() {
 
         <div className="mt-8 max-w-full rounded-3xl border border-[#d96889]/20 bg-surface p-5 shadow-[0_12px_40px_rgba(151,45,62,0.07)] sm:p-6 md:p-9">
           <InquireForm />
-
-          <p className="mt-8 text-center text-xs text-[#6f3944]">
-            <a
-              href={instagramUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold uppercase tracking-[0.12em] text-[#972d3e] underline decoration-[#972d3e]/25 underline-offset-4"
-            >
-              Instagram
-            </a>
-          </p>
         </div>
       </main>
       <SiteFooter />
