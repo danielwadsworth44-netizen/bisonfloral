@@ -138,17 +138,17 @@ export default function Home() {
         </section>
 
         <section className="border-t border-[#972d3e]/10 bg-background">
-          <div className="mx-auto max-w-2xl min-w-0 px-4 py-6 text-center sm:px-5 sm:py-7 md:px-8 md:py-8">
+          <div className="mx-auto max-w-lg min-w-0 px-4 py-4 text-center sm:px-5 sm:py-5 md:px-6">
             <div
-              className={`rounded-2xl border border-[#d96889]/20 bg-surface/95 px-5 py-6 shadow-[0_8px_28px_rgba(151,45,62,0.05)] md:px-8 md:py-7 ${galleryTeaser.className}`}
+              className={`rounded-xl border border-[#d96889]/20 bg-surface/95 px-4 py-4 shadow-[0_6px_20px_rgba(151,45,62,0.04)] sm:px-5 sm:py-4 ${galleryTeaser.className}`}
               style={galleryTeaser.style}
             >
-              <p className="mb-5 [font-family:var(--font-script)] text-[1.2rem] leading-[1.28] text-[#4b3833] sm:mb-6 sm:text-[1.45rem] sm:leading-[1.24] md:text-[1.6rem] md:leading-[1.22]">
+              <p className="mb-2.5 [font-family:var(--font-script)] text-[1.15rem] leading-[1.22] text-[#4b3833] sm:text-[1.35rem] sm:leading-[1.18] md:text-[1.5rem] md:leading-[1.16]">
                 a look into our recent work
               </p>
               <Link
                 href="/gallery"
-                className="inline-flex min-h-11 items-center justify-center text-sm font-semibold uppercase tracking-[0.2em] text-[#972d3e] underline decoration-[#972d3e]/30 underline-offset-8 transition hover:decoration-[#972d3e]"
+                className="inline-flex min-h-10 items-center justify-center text-sm font-semibold uppercase tracking-[0.2em] text-[#972d3e] underline decoration-[#972d3e]/30 underline-offset-6 transition hover:decoration-[#972d3e]"
               >
                 Gallery
               </Link>
