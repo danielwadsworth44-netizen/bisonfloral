@@ -20,7 +20,7 @@ export default function InquirePage() {
             <h1 className="pt-1 [font-family:var(--font-script)] text-[1.58rem] leading-[1.12] text-[#241915] sm:pt-1.5 sm:text-[1.69rem] sm:leading-[1.1] md:text-[1.99rem] md:leading-[1.08]">
               I had a feeling you&apos;d be here…
             </h1>
-            <p className="mt-2 [font-family:var(--font-script)] text-lg leading-snug text-[#4b3833] sm:text-xl md:text-2xl">
+            <p className="mt-2 text-base leading-snug text-[#4b3833] sm:text-lg">
               Fill out the form to get started!
             </p>
           </div>

@@ -41,6 +41,22 @@ export function SiteFooter() {
             Instagram
           </a>
         </nav>
+
+        <p className="mt-2 max-w-2xl text-center text-[0.7rem] leading-relaxed text-[#6f3944] sm:text-xs">
+          <span className="opacity-95">Website by </span>
+          <a
+            href="https://theclickbuilders.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-[#972d3e] underline decoration-[#972d3e]/30 underline-offset-2 transition hover:decoration-[#972d3e]"
+          >
+            TheClickBuilders
+          </a>
+          <span className="mx-2 inline-block opacity-40" aria-hidden>
+            ·
+          </span>
+          <span className="opacity-95">Logo and Brand design by Moxie Design</span>
+        </p>
       </div>
     </footer>
   );
