@@ -7,6 +7,15 @@ export const siteNav = [
 
 export const instagramUrl = "https://www.instagram.com/bisonfloral/?hl=en";
 
-/** HoneyBook contact / inquiry widget — submissions go to the client’s HoneyBook inbox. */
+/** Full-page widget link (fallback + Share → Link). Keep `cf_id` in sync with `honeyBookPlacementId`. */
 export const honeyBookInquiryUrl =
-  "https://www.honeybook.com/widget/bison_floral_260869/cf_id/69c4a06c62902d003f5ff2c0";
+  "https://www.honeybook.com/widget/bison_floral_260869/cf_id/64bdd85d15d879002c071b09";
+
+/**
+ * Official on-site embed from HoneyBook Share → Code (`hb-p-…` div + script `pid`).
+ */
+export const honeyBookPlacementId = "64bdd85d15d879002c071b09";
+export const honeyBookPlacementSlotSuffix = "2";
+
+export const honeyBookPlacementControllerSrc =
+  "https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js";

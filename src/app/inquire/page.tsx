@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { HoneyBookEmbed } from "@/components/HoneyBookEmbed";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { honeyBookInquiryUrl } from "@/components/site-data";
 export const metadata: Metadata = {
   title: "Inquire",
 };
@@ -21,7 +21,7 @@ export default function InquirePage() {
               I had a feeling you&apos;d be here…
             </h1>
             <p className="mt-2 text-base leading-snug text-[#4b3833] sm:text-lg">
-              Use the form below—your inquiry goes straight to our HoneyBook inbox.
+              Share your details in the form below—it connects straight to our HoneyBook inbox.
             </p>
           </div>
           <div className="mx-auto w-[7.5rem] shrink-0 rounded-xl border border-[#972d3e]/10 bg-surface-elevated/90 p-2 sm:mx-0 sm:mt-1 sm:w-[8.25rem] md:w-[9rem]">
@@ -35,23 +35,8 @@ export default function InquirePage() {
           </div>
         </div>
 
-        <div className="mt-8 max-w-full overflow-hidden rounded-3xl border border-[#d96889]/20 bg-surface p-4 shadow-[0_12px_40px_rgba(151,45,62,0.07)] sm:p-5 md:p-6">
-          <iframe
-            title="Inquire with Bison Floral — HoneyBook"
-            src={honeyBookInquiryUrl}
-            className="block min-h-[46rem] w-full rounded-2xl border-0 bg-transparent sm:min-h-[50rem]"
-            loading="lazy"
-          />
-          <p className="mt-4 text-center text-xs text-[#6f3944]">
-            <a
-              href={honeyBookInquiryUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold uppercase tracking-[0.12em] text-[#972d3e] underline decoration-[#972d3e]/25 underline-offset-4"
-            >
-              Open form in a new tab
-            </a>
-          </p>
+        <div className="relative mt-8 max-w-full overflow-hidden rounded-3xl border border-[#d96889]/20 bg-surface p-4 shadow-[0_12px_40px_rgba(151,45,62,0.07)] sm:p-6 md:p-8">
+          <HoneyBookEmbed />
         </div>
       </main>
       <SiteFooter />
